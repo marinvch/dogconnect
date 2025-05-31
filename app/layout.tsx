@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dog Training Platform",
-  description: "Professional dog training programs and progress tracking",
+  title: "Dog Connect - Find Your Perfect Companion",
+  description: "Connect with adoptable dogs and find your perfect furry companion. Training programs coming soon!",
 };
 
 export default function RootLayout({

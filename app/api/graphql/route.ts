@@ -25,6 +25,12 @@ export class Dog {
 
   @Field(() => Number)
   age!: number;
+
+  @Field()
+  description!: string;
+
+  @Field()
+  availableForAdoption!: boolean;
 }
 
 @Resolver(Dog)
@@ -32,18 +38,60 @@ export class DogsResolver {
   @Query(() => [Dog])
   dogs(): Dog[] {
     return [
-      { id: "1", name: "Buddy", breed: "Golden Retriever", age: 3 },
-      { id: "2", name: "Max", breed: "German Shepherd", age: 5 },
-      { id: "3", name: "Luna", breed: "Border Collie", age: 2 },
+      { 
+        id: "1", 
+        name: "Buddy", 
+        breed: "Golden Retriever", 
+        age: 3, 
+        description: "Friendly and energetic dog, great with kids and other pets.",
+        availableForAdoption: true 
+      },
+      { 
+        id: "2", 
+        name: "Max", 
+        breed: "German Shepherd", 
+        age: 5, 
+        description: "Loyal and protective, well-trained and house-broken.",
+        availableForAdoption: true 
+      },
+      { 
+        id: "3", 
+        name: "Luna", 
+        breed: "Border Collie", 
+        age: 2, 
+        description: "Intelligent and active, loves to play fetch and learn new tricks.",
+        availableForAdoption: true 
+      },
     ];
   }
 
   @Query(() => Dog, { nullable: true })
   dog(@Arg("id") id: string): Dog | null {
     const dogs = [
-      { id: "1", name: "Buddy", breed: "Golden Retriever", age: 3 },
-      { id: "2", name: "Max", breed: "German Shepherd", age: 5 },
-      { id: "3", name: "Luna", breed: "Border Collie", age: 2 },
+      { 
+        id: "1", 
+        name: "Buddy", 
+        breed: "Golden Retriever", 
+        age: 3, 
+        description: "Friendly and energetic dog, great with kids and other pets.",
+        availableForAdoption: true 
+      },
+      { 
+        id: "2", 
+        name: "Max", 
+        breed: "German Shepherd", 
+        age: 5, 
+        description: "Loyal and protective, well-trained and house-broken.",
+        availableForAdoption: true 
+      },
+      { 
+        id: "3", 
+        name: "Luna", 
+        breed: "Border Collie", 
+        age: 2, 
+        description: "Intelligent and active, loves to play fetch and learn new tricks.",
+        availableForAdoption: true 
+      },
     ];
     return dogs.find((dog) => dog.id === id) || null;
   }

@@ -2,6 +2,15 @@
   "name": "dog-connect",
   "version": "0.1.0",
   "private": true,
+  "description": "Connect with adoptable dogs and find your perfect furry companion",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marinvch/dogconnect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marinvch/dogconnect/issues"
+  },
+  "homepage": "https://github.com/marinvch/dogconnect#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
